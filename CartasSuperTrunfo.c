@@ -27,9 +27,9 @@ int main() {
     printf("Digite o estado (A-H): ");
     scanf(" %c", &estado1);
     printf("Digite o código da carta: ");
-    scanf("%s", codigo1);
+    scanf(" %3s", codigo1);
     printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]", cidade1);
+    scanf(" %29[^\n]", cidade1);
     printf("Digite a população: ");
     scanf("%d", &populacao1);
     printf("Digite a área (em km²): ");
@@ -44,9 +44,9 @@ int main() {
     printf("Digite o estado (A-H): ");
     scanf(" %c", &estado2);
     printf("Digite o código da carta: ");
-    scanf("%s", codigo2);
+    scanf(" %3s", codigo2);
     printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]", cidade2);
+    scanf(" %29[^\n]", cidade2);
     printf("Digite a população: ");
     scanf("%d", &populacao2);
     printf("Digite a área (em km²): ");
@@ -69,7 +69,7 @@ int main() {
     // Exibir os dados cadastrados
     printf("\nDados das cartas cadastradas:\n");
     
-   printf("\nEstado: %c\n", estado1);
+    printf("\nEstado: %c\n", estado1);
     printf("Código da Carta: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
