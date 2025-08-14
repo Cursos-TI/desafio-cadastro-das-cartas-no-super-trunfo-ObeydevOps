@@ -1,9 +1,9 @@
 #include <stdio.h>
-
 int main() {
     // Variáveis para a primeira carta
     char estado1;
-    char cidade1;
+    char codigo1[4];
+    char cidade1[30];
     int populacao1;
     float area1;
     float pib1;
@@ -11,7 +11,8 @@ int main() {
     
     // Variáveis para a segunda carta
     char estado2;
-    char cidade2;
+    char codigo2[4];
+    char cidade2[30];
     int populacao2;
     float area2;
     float pib2;
@@ -21,8 +22,10 @@ int main() {
     printf("Cadastro da primeira carta:\n");
     printf("Digite o estado (A-H): ");
     scanf(" %c", &estado1);
+    printf("Digite o código da carta: ");
+    scanf("%s", codigo1);
     printf("Digite o nome da cidade: ");
-    scanf("%s", &cidade1);
+   scanf(" %[^\\n]", Cidade1);
     printf("Digite a população: ");
     scanf("%d", &populacao1);
     printf("Digite a área (em km²): ");
@@ -36,6 +39,8 @@ int main() {
     printf("\nCadastro da segunda carta:\n");
     printf("Digite o estado (A-H): ");
     scanf(" %c", &estado2);
+    printf("Digite o código da carta: ");
+    scanf("%s", codigo2);
     printf("Digite o nome da cidade: ");
     scanf("%s", &cidade2);
     printf("Digite a população: ");
