@@ -56,6 +56,7 @@ int main() {
     printf("\nDados das cartas cadastradas:\n");
     
     printf("\nEstado: %c\n", estado1);
+    printf("Código da Carta: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
     printf("Área: %.2f km²\n", area1);
@@ -63,6 +64,7 @@ int main() {
     printf("Pontos turísticos: %d\n", pontos_turisticos1);
     
     printf("\nEstado: %c\n", estado2);
+    printf("Código da Carta: %s\n", codigo2);
     printf("Nome da Cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
     printf("Área: %.2f km²\n", area2);
