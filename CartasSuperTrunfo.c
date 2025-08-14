@@ -25,7 +25,7 @@ int main() {
     printf("Digite o código da carta: ");
     scanf("%s", codigo1);
     printf("Digite o nome da cidade: ");
-   scanf(" %[^\\n]", Cidade1);
+    scanf(" %[^\n]", cidade1);
     printf("Digite a população: ");
     scanf("%d", &populacao1);
     printf("Digite a área (em km²): ");
@@ -42,7 +42,7 @@ int main() {
     printf("Digite o código da carta: ");
     scanf("%s", codigo2);
     printf("Digite o nome da cidade: ");
-    scanf("%s", &cidade2);
+    scanf(" %[^\n]", cidade2);
     printf("Digite a população: ");
     scanf("%d", &populacao2);
     printf("Digite a área (em km²): ");
@@ -55,13 +55,15 @@ int main() {
     // Exibir os dados cadastrados
     printf("\nDados das cartas cadastradas:\n");
     
-    printf("\nCarta %c%02d:\n", estado1, cidade1);
+    printf("\nEstado: %c\n", estado1);
+    printf("Nome da Cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f milhões\n", pib1);
     printf("Pontos turísticos: %d\n", pontos_turisticos1);
     
-    printf("\nCarta %c%02d:\n", estado2, cidade2);
+    printf("\nEstado: %c\n", estado2);
+    printf("Nome da Cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f milhões\n", pib2);
