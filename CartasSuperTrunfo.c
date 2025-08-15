@@ -58,7 +58,7 @@ int main() {
     scanf("%d", &pontos_turisticos2);
 
     // Primeira carta com tratamento de divisão por zero
-    if (area1 != 0.00f) {
+    if (area1 != 0.0f) {
         densidade1 = (float)populacao1 / area1;
     } else {
         densidade1 = 0.0f;
@@ -68,15 +68,15 @@ int main() {
     if (populacao1 != 0) {
         pib_per_capita1 = (pib1 * 1000000) / populacao1;
     } else {
-        pib_per_capita1 = 0.00f;
+        pib_per_capita1 = 0.0f;
         printf("Aviso: População da Carta 1 é zero. PIB per Capita definido como 0.\n");
     }
 
     // Segunda carta com tratamento de divisão por zero
-    if (area2 != 0.00f) {
+    if (area2 != 0.0f) {
         densidade2 = (float)populacao2 / area2;
     } else {
-        densidade2 = 0.00f;
+        densidade2 = 0.0f;
         printf("\nAviso: Área da Carta 2 é zero. Densidade Populacional definida como 0.\n");
     }
 
@@ -112,5 +112,5 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: R$ %.2f\n", pib_per_capita2);
 
-    return 0;
+    return 1;
 }
