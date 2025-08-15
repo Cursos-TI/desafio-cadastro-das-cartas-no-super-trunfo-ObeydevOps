@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     // Variáveis para a primeira carta
     char estado1;
@@ -10,6 +11,7 @@ int main() {
     int pontos_turisticos1;
     float densidade1;
     float pib_per_capita1;
+    
     // Variáveis para a segunda carta
     char estado2;
     char codigo2[4];
@@ -21,7 +23,6 @@ int main() {
     float densidade2;
     float pib_per_capita2;
 
-    
     // Cadastro da primeira carta
     printf("Cadastro da primeira carta:\n");
     printf("Digite o estado (A-H): ");
@@ -38,7 +39,7 @@ int main() {
     scanf("%f", &pib1);
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &pontos_turisticos1);
-    
+
     // Cadastro da segunda carta
     printf("\nCadastro da segunda carta:\n");
     printf("Digite o estado (A-H): ");
@@ -55,41 +56,61 @@ int main() {
     scanf("%f", &pib2);
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &pontos_turisticos2);
-    
-    // Cálculo da densidade populacional e PIB per capita para a primeira carta
-    densidade1 = (float)populacao1 / area1;
-    pib_per_capita1 = (pib1 * 1000000) / populacao1; // PIB em reais por habitante
-    
-    // Cálculo da densidade populacional e PIB per capita para a segunda carta
-    densidade2 = (float)populacao2 / area2;
-    pib_per_capita2 = (pib2 * 1000000) / populacao2; // PIB em reais por habitante
-    
-    
-    
+
+    // Primeira carta com tratamento de divisão por zero
+    if (area1 != 0.00f) {
+        densidade1 = (float)populacao1 / area1;
+    } else {
+        densidade1 = 0.0f;
+        printf("\nAviso: Área da Carta 1 é zero. Densidade Populacional definida como 0.\n");
+    }
+
+    if (populacao1 != 0) {
+        pib_per_capita1 = (pib1 * 1000000) / populacao1;
+    } else {
+        pib_per_capita1 = 0.00f;
+        printf("Aviso: População da Carta 1 é zero. PIB per Capita definido como 0.\n");
+    }
+
+    // Segunda carta com tratamento de divisão por zero
+    if (area2 != 0.00f) {
+        densidade2 = (float)populacao2 / area2;
+    } else {
+        densidade2 = 0.00f;
+        printf("\nAviso: Área da Carta 2 é zero. Densidade Populacional definida como 0.\n");
+    }
+
+    if (populacao2 != 0) {
+        pib_per_capita2 = (pib2 * 1000000) / populacao2;
+    } else {
+        pib_per_capita2 = 0.0f;
+        printf("Aviso: População da Carta 2 é zero. PIB per Capita definido como 0.\n");
+    }
+
     // Exibir os dados cadastrados
     printf("\nDados das cartas cadastradas:\n");
-    
-    printf("\nEstado: %c\n", estado1);
-    printf("Código da Carta: %s\n", codigo1);
-    printf("Nome da Cidade: %s\n", cidade1);
+
+    printf("\n--- Primeira Carta ---\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f milhões\n", pib1);
     printf("Pontos turísticos: %d\n", pontos_turisticos1);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
     printf("PIB per Capita: R$ %.2f\n", pib_per_capita1);
-    
-    printf("\nEstado: %c\n", estado2);
-    printf("Código da Carta: %s\n", codigo2);
-    printf("Nome da Cidade: %s\n", cidade2);
+
+    printf("\n--- Segunda Carta ---\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f milhões\n", pib2);
     printf("Pontos turísticos: %d\n", pontos_turisticos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: R$ %.2f\n", pib_per_capita2);
-    
-    
-   
+
     return 0;
 }
